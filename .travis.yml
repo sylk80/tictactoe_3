@@ -24,6 +24,7 @@ jobs:
   - env: step=Run Snyk vulnerability check
     name: Run Snyk vulnerability check
     script:
+      - snyk auth
       - snyk test
   - env: step=Run linter
     name: Run linter
