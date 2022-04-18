@@ -24,11 +24,11 @@ jobs:
     name: Run unit test
     script:
       - npm test
-  - env: step= Run Snyk vulnerability check
+  - env: step=Run Snyk vulnerability check
     name: Run Snyk vulnerability check
     script:
       - snyk test
-  - env: step= Run Sonar Scanner
+  - env: step=Run Sonar Scanner
     name: Run Sonar Scanner
     script:
      - sonar-scanner
@@ -38,7 +38,7 @@ jobs:
      - npm run lint
   - stage: Deploy
     env: step=Deploy to Firebase
-    name=Deploy to Firebase
+    name: Deploy to Firebase
     provider: firebase
     token:
       secure: "QdUX0eXvWtu5ex+Ajdwbz/fNIpcZM0kDJskvx/ZotorjzvAfOKXz5T5XK9kP2tfMpOQ15Oecd4248WTIY7u7LGfJXU8P8em0hEPA+JlwgI9NLLSAz8JBvWLK2VlLc7cDzthgsX8Tq/8XNu8zMIlhxgNLDXqegR7WI7SiW4E6FLjYMgk2HRQ5k4nngDNAxXkUQ/AFqecPSIaGlZWMSJo8PqG5YcrkAYSp0+i+josqqNkEtVRDxS6RVPpU3oY1RM0afqN6e2/5ArnjeMnETPmusx8Nsqeou+pXfpxcB+wYKZU6p7FO59SlPoG06K83Z9OWDLMp3WRJi88ZoBV+xpHZdFAIJSH8eiEQypeUFYkKWZOveISBHi5I2T+XzBX+HwWONB9lB11sVWDIJeH7fmcFbz3u7Re9rM42ujqSu2iVJOaSHZMnnantutVYfLbMn+ua1G0juZKrq+XTg9UXVf6MQKiB9Y0GPAdWd68D3LgM/U0B3/YSswuFbCO70xx2clyngFPzSZItJYWXwA9gSppeZfKKMXAIHDF4QQohTsFtl7RA1gz1uwQThhf02Ax0yk89wAcSeWoIc5zUCmLBT7asRDgx6+6p9FmJeqXwKPhHj7PPuu+Otj6ECCj3rCyEKG/sYAdjDFJ0rDn/xAe5M8EL0s/wAweOaNcf1fqsMLQ9rTg="
