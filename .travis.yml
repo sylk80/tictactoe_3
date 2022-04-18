@@ -15,27 +15,29 @@ env:
 before_install:
   - npm i -g npm@8.3.1
 stages:
+  - name: Build
   - name: Test
   - name: Deploy
 jobs:
   include:
+  - stage: Build
+  - env: step=Run Snyk vulnerability check
+    name: Run Snyk vulnerability check
+    script:
+      - snyk test
+  - env: step=Run linter
+    name: Run linter
+    script:
+      - npm run lint
   - stage: Test
   - env: step=Run unit tests
     name: Run unit test
     script:
       - npm test
-  - env: step=Run Snyk vulnerability check
-    name: Run Snyk vulnerability check
-    script:
-      - snyk test
   - env: step=Run Sonar Scanner
     name: Run Sonar Scanner
     script:
      - sonar-scanner
-  - env: step=Run linter
-    name: Run linter
-    script:
-     - npm run lint
   - stage: Deploy
     env: step=Deploy to Firebase
     name: Deploy to Firebase
