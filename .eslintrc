@@ -15,11 +15,7 @@
     "ecmaVersion": 12
   },
   "plugins": ["prettier","jest"],
-  "rules": {
-  "prettier/prettier": "error",
-  "complexity": ["error", { "max": 3 }],
-  "require-jsdoc": "off"
-  },
+  "rules": {},
   "ignorePatterns" : [
     ",./*.config.js",
     "*_test.js"
