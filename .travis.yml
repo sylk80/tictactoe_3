@@ -14,6 +14,8 @@ env:
 
 before_install:
   - npm i -g npm@8.3.1
+  - npm install -g snyk@latest
+  - snyk -v
 stages:
   - name: Build
   - name: Test
@@ -24,7 +26,7 @@ jobs:
   - env: step=Run Snyk vulnerability check
     name: Run Snyk vulnerability check
     script:
-      - snyk auth ${SNYK_TOKEN}
+      - snyk auth $SNYK_TOKEN
       - snyk test
   - env: step=Run linter
     name: Run linter
