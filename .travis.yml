@@ -14,8 +14,8 @@ env:
 
 before_install:
   - npm i -g npm@8.3.1
-  - npm install -g snyk@latest
-  - snyk -v
+#  - npm install -g snyk@latest
+#  - snyk -v
 stages:
   - name: Build
   - name: Test
@@ -23,12 +23,12 @@ stages:
 jobs:
   include:
   - stage: Build
-  - env:
-      - step=Run_Snyk_vulnerability_check
-      - secure: "Q9o4MeZPwu1TfvIodiehiq+EILTngIhjgb4fbrXmRCUF306RpMrjI1v/PH1qIbYzxxBtnfzE+CUiSpGF7Vr2CntgIf6gNKiZdg9RsU9AcQZXliEQoH0/a89HQ3VsDtCwr7nnTEw5Q1N69x9M377XT44iiAZoNa+aQkcyxTOw+gHlaBViW6FNkJS6+NJ0xL5NZlolFlnIGHPVEq0L+3fkUEsfB7CwL7vfZvmEktOvJ1sXYAo6PBLjDpzY7mDKlj6wysQ4cjtJGBWahiexdJOzfbmYp0KuioWxtGv8WGuy9PWV4eCvU2RBmkPI0M1t7C6GToS/NKs104atafHDN/lSgcybxLdTOHP8+hBqSu64CHRqMZ/CNN2fu8FuuDnIwA1/vU01X7I6ghBDEP3FsIX7vDEv2B7OwuyAER9YWwIg3F8vfJ5C2spR5gz2UsVAhr/1+2GNcwpSyydyaOuJAPSTC2I07A0G+Ipux9CGpJKLU3FqdmagNl27vjJxPG/jVCU6DcButCf3bHO5GuC3FxJ8VhVxSw1GWaErixlGV91B0D//jdyszp0T+CqhEhshwYbry23oPqtvoyAry9EoARuFAA1FLvbeZHTwuFJLssCFOJxAlJiwJQ/SE0AO+D32fpkYKOM9WmwcQPBnLHtdSo4peKg9TXcIKkkCClcqnvb6aAc="
-    name: "Run Snyk vulnerability check"
-    script:
-      snyk test
+ # - env:
+ #     - step=Run_Snyk_vulnerability_check
+ #     - secure: "Q9o4MeZPwu1TfvIodiehiq+EILTngIhjgb4fbrXmRCUF306RpMrjI1v/PH1qIbYzxxBtnfzE+CUiSpGF7Vr2CntgIf6gNKiZdg9RsU9AcQZXliEQoH0/a89HQ3VsDtCwr7nnTEw5Q1N69x9M377XT44iiAZoNa+aQkcyxTOw+gHlaBViW6FNkJS6+NJ0xL5NZlolFlnIGHPVEq0L+3fkUEsfB7CwL7vfZvmEktOvJ1sXYAo6PBLjDpzY7mDKlj6wysQ4cjtJGBWahiexdJOzfbmYp0KuioWxtGv8WGuy9PWV4eCvU2RBmkPI0M1t7C6GToS/NKs104atafHDN/lSgcybxLdTOHP8+hBqSu64CHRqMZ/CNN2fu8FuuDnIwA1/vU01X7I6ghBDEP3FsIX7vDEv2B7OwuyAER9YWwIg3F8vfJ5C2spR5gz2UsVAhr/1+2GNcwpSyydyaOuJAPSTC2I07A0G+Ipux9CGpJKLU3FqdmagNl27vjJxPG/jVCU6DcButCf3bHO5GuC3FxJ8VhVxSw1GWaErixlGV91B0D//jdyszp0T+CqhEhshwYbry23oPqtvoyAry9EoARuFAA1FLvbeZHTwuFJLssCFOJxAlJiwJQ/SE0AO+D32fpkYKOM9WmwcQPBnLHtdSo4peKg9TXcIKkkCClcqnvb6aAc="
+ #   name: "Run Snyk vulnerability check"
+ #   script:
+ #     snyk test
   - env: step=Run_linter
     name: "Run linter"
     script:
