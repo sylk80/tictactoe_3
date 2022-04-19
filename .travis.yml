@@ -24,7 +24,7 @@ jobs:
   - env: step=Run Snyk vulnerability check
     name: Run Snyk vulnerability check
     script:
-      - snyk auth [secure: "ortPDZXBGXzCClHRdmov9KHt8pKLBl8eFNFZ5PdJGqRqksBRDlvQUBfxm7ZexqYuH+mMyt/BuwD6x/Bnai1NYrQzdUQJT5N+8/lmZY/HyuKNWS7HjggG231upR2+S1/Xl82G7biee2wE5ryHRMt2U019o/UFz6OkIcm5Rreitvz+00HdoDSENgan8zvcI6SIGtE1j1swpo3M3IoUq0A8g7QvxClsWU8vgoccScsXDi6usY02GUi7HATWFw1NsRqq5y8lDMzRnHn/tPGmr929LVHZQKzNuabj9Q2cMwteLw8ViMv58t4ZyWl93+ga9NswId3c41yatl18UE1eG607WTDKEyKhYqvd/tAaAp2ztk1+9zVinaKrpHxG7bHrLF8Q2HRtDlTTVhkaSYUTfgHkId0i8nIn+Aq5S3ZitmDhSGQ4ycWb7YwqqNVR9qNSoTeXV8MVCciGxOCAxTIeBz2b2imZgh5q17exXybBo+031kOynkeqhQt6cwkx8XIXyHGAgg+WY2kCUgw1udKnUK4nIsrXN3VHckN92G8cDHBAppKv3uozI3izfmCb3ZojlXj8SR+egV9NevL76//vl6AzMmVyjkwk5q0QFUpZGgHh8mMXeJr3Ejab/p5+CYX1g4b/b9ilfo5pr/bYL4imkpdVSEYpQC/iWwuPY4enAXEO5RE="]
+      - snyk auth ${SNYK_TOKEN}
       - snyk test
   - env: step=Run linter
     name: Run linter
